@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Mr. Wan Thuthri</title>
+  <desc id="desc">Friendly cartoon food helper with glasses, a chef hat and a turquoise bow tie.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffda84"/><stop offset="1" stop-color="#aff5dc"/></linearGradient>
+    <linearGradient id="coat" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4c87d9"/><stop offset="1" stop-color="#294c9c"/></linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="55" fill="url(#bg)"/>
+  <circle cx="128" cy="132" r="96" fill="#fff9df" opacity=".76"/>
+  <path d="M48 256c3-58 29-82 80-82s79 24 82 82" fill="url(#coat)" stroke="#203c70" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M101 179l27 37 27-37" fill="#fff9f0" stroke="#203c70" stroke-width="6"/>
+  <path d="M110 212l18-8 18 8-18 14z" fill="#26c4a4" stroke="#146d72" stroke-width="4"/>
+  <ellipse cx="128" cy="128" rx="65" ry="77" fill="#ffc28d" stroke="#203c70" stroke-width="7"/>
+  <ellipse cx="65" cy="131" rx="10" ry="19" fill="#ffbc88" stroke="#203c70" stroke-width="5"/>
+  <ellipse cx="191" cy="131" rx="10" ry="19" fill="#ffbc88" stroke="#203c70" stroke-width="5"/>
+  <path d="M70 97c3-47 31-69 58-69 39 0 67 28 62 68-15-4-26-12-34-26-18 19-45 27-86 27z" fill="#29355b" stroke="#203c70" stroke-width="6"/>
+  <path d="M84 61c-15-17-7-41 14-47 10-23 44-19 53 0 24-11 45 9 39 31 21 7 21 36 2 44H70c-17-10-15-25 14-28z" fill="#fff" stroke="#203c70" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="80" y="99" width="42" height="36" rx="13" fill="#b8f4ee" fill-opacity=".5" stroke="#203c70" stroke-width="7"/>
+  <rect x="135" y="99" width="42" height="36" rx="13" fill="#b8f4ee" fill-opacity=".5" stroke="#203c70" stroke-width="7"/>
+  <path d="M122 111q7-6 13 0" stroke="#203c70" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <circle cx="101" cy="117" r="5" fill="#203c70"/><circle cx="156" cy="117" r="5" fill="#203c70"/>
+  <circle cx="84" cy="142" r="10" fill="#ff8f91" opacity=".65"/><circle cx="173" cy="142" r="10" fill="#ff8f91" opacity=".65"/>
+  <path d="M106 153q22 22 45 0" stroke="#a63b55" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M218 45l6 14 14 5-14 6-6 14-6-14-14-6 14-5z" fill="#fff" stroke="#eaa542" stroke-width="3"/>
+</svg>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff9ed">
+  <meta name="description" content="Food Quest! Interactive Year 5 English lessons about healthy food and creating your own recipe.">
+  <meta name="author" content="Rosario Ivan anak Ambrose">
+  <meta name="creator" content="Rosario Ivan anak Ambrose">
+  <meta name="creator-class" content="BI2824">
+  <title>Food Quest! | Year 5 English</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+  <script src="chat-helper.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="shell" id="appShell">
+    <header class="topbar">
+      <button id="brandHome" class="brand" type="button" aria-label="Food Quest homepage"><span class="brand-icon">🍎</span> FOOD <strong>QUEST!</strong></button>
+      <nav class="nav" aria-label="Learning pages">
+        <button type="button" data-nav="home" class="active">🏠 Home</button>
+        <button type="button" data-nav="activities">📝 Activities</button>
+        <button type="button" data-nav="games">🎮 Games</button>
+        <button type="button" data-nav="progress">⭐ Progress</button>
+        <button type="button" data-nav="creator">👤 Creator</button>
+        <button type="button" data-nav="teacher">🔒 Teacher</button>
+      </nav>
+      <button class="player-pill" id="switchPlayer" type="button" title="Switch pupil profile">👩‍🍳 Choose player</button>
+    </header>
+
+    <main id="main">
+      <section class="page" id="page-home" aria-labelledby="homeTitle">
+        <div class="home-hero">
+          <div class="hero-copy">
+            <span class="eyebrow">✨ UNIT 5 · FOOD &amp; HEALTH</span>
+            <h1 id="homeTitle">Let's talk about <em>food!</em></h1>
+            <p>Welcome, little chef! Let's collect healthy and unhealthy foods before our bigger learning adventure.</p>
+            <div class="hero-note"><span>🥕</span> Creating My Healthy Recipe <span>🍓</span></div>
+          </div>
+          <div class="hero-illustration" role="img" aria-label="Illustration of a colourful bowl of fruit surrounded by apple, carrot, burger and pizza stickers">
+            <div class="blob-ring"></div><span class="hero-food f1">🍎</span><span class="hero-food f2">🍔</span><span class="hero-food f3">🥕</span><span class="hero-food f4">🍕</span>
+            <div class="food-bowl"><span class="sparkles">✦ ✦ ✦</span><strong>FOOD<br>EXPLORER</strong><span class="bowl-emoji">🥗</span><small>LEARN · CREATE · GROW</small></div>
+            <span class="doodle d1">✳</span><span class="doodle d2">✦</span>
+          </div>
+        </div>
+        <div class="section-heading home-heading"><div><span class="mini-label">YOUR FOOD IDEAS</span><h2>What foods do you know? 🍉</h2><p>Type a food name and press Add. Your ideas will be saved with your pupil profile.</p></div></div>
+        <div class="entry-grid">
+          <article class="entry-card healthy-card"><div class="entry-head"><div class="entry-face">🥦</div><div><h3>Healthy Foods</h3><p>Foods we can enjoy often for a balanced diet</p></div></div>
+            <div class="example-row" aria-hidden="true"><span>🍎</span><span>🥕</span><span>🥬</span><span>🍇</span></div>
+            <form id="healthyForm" class="food-form"><label for="healthyInput">Add a healthy food</label><div class="input-line"><input id="healthyInput" type="text" maxlength="32" autocomplete="off" placeholder="e.g. spinach" required><button type="submit">+ Add</button></div></form>
+            <div id="healthyList" class="food-tags" aria-live="polite"></div><p id="healthyEmpty" class="empty-note">Your healthy food list is empty. Add your first one!</p>
+          </article>
+          <article class="entry-card treat-card"><div class="entry-head"><div class="entry-face">🍕</div><div><h3>Unhealthy Foods</h3><p>Sometimes treats — better in smaller amounts</p></div></div>
+            <div class="example-row" aria-hidden="true"><span>🍔</span><span>🥤</span><span>🍭</span><span>🍟</span></div>
+            <form id="treatForm" class="food-form"><label for="treatInput">Add an unhealthy food</label><div class="input-line"><input id="treatInput" type="text" maxlength="32" autocomplete="off" placeholder="e.g. candy" required><button type="submit">+ Add</button></div></form>
+            <div id="treatList" class="food-tags" aria-live="polite"></div><p id="treatEmpty" class="empty-note">Your unhealthy food list is empty. Add your first one!</p>
+          </article>
+        </div>
+        <div class="info-strip"><span>🌈</span><p><strong>Remember:</strong> A healthy diet is about balance and variety. We are learning about foods, not judging anyone's meals.</p><span id="homeCount">0 foods collected</span></div>
+      </section>
+
+      <section class="page hidden" id="page-activities" aria-labelledby="activitiesTitle">
+        <div class="section-hero lavender"><div><span class="eyebrow">📝 LEARNING STATIONS</span><h1 id="activitiesTitle">Let's learn by <em>doing!</em></h1><p>Explore food groups, then create a delicious healthy recipe with clear English instructions.</p></div><div class="section-hero-art">🥗<span>✏️</span></div></div>
+        <div class="station-tabs" role="tablist" aria-label="Choose learning activity"><button id="plateTab" role="tab" aria-selected="true" aria-controls="plateStation" class="selected" type="button">🥗 Station 1: Healthy Plate</button><button id="recipeTab" role="tab" aria-selected="false" aria-controls="recipeStation" type="button">🧑‍🍳 Station 2: Recipe Studio</button></div>
+        <div id="plateStation" role="tabpanel" aria-labelledby="plateTab">
+          <div id="plateIntro" class="activity-card two-column"><div><span class="mini-label">FOOD GROUP CHALLENGE</span><h2>Build Your Healthy Plate</h2><p>Do you know which food group each item belongs to? Match <strong>10 foods</strong> to the right groups to help create a balanced meal.</p><div class="group-legend"><span>🍓 Fruit</span><span>🥦 Vegetable</span><span>🐟 Protein</span><span>🍞 Grains</span><span>🥛 Dairy</span></div><button id="plateStart" type="button" class="btn primary">Let's match! →</button></div><div class="intro-art">🍽️<span>🥗</span></div></div>
+          <div id="platePlay" class="activity-card hidden"><div class="game-topline"><span id="plateCounter">FOOD 1 OF 10</span><strong id="plateScore">0 correct</strong></div><div class="progress-track"><span id="plateBar"></span></div><div id="plateFoodEmoji" class="big-food">🍌</div><h2 class="centered" id="plateFoodName">Which food group?</h2><p class="centered muted">Choose the correct group for this food.</p><div id="plateChoices" class="choice-grid plate-choices"></div><p id="plateFeedback" class="feedback" role="status"></p><div class="centered"><button id="plateNext" class="btn primary hidden" type="button">Next food →</button></div></div>
+          <div id="plateResult" class="activity-card result-card hidden"><div class="result-emoji">🏅</div><h2>You've completed the plate challenge!</h2><div class="score-big" id="plateFinal">0/10</div><p id="plateMessage">Good effort!</p><div class="action-row centered-actions"><button id="plateRetry" class="btn primary" type="button">🔄 Try again</button><button id="goRecipe" class="btn light" type="button">Recipe Studio →</button></div></div>
+        </div>
+        <div id="recipeStation" role="tabpanel" aria-labelledby="recipeTab" class="hidden">
+          <div class="recipe-workspace"><div class="activity-card"><span class="mini-label">GUIDED WRITING · 4 SENTENCES</span><h2>My Healthy Recipe</h2><p>You are the chef and the writer! Choose vocabulary from the word bank, then create your <strong>own</strong> recipe. There are no ready-made answers.</p>
+            <div class="recipe-word-bank" aria-labelledby="wordBankTitle">
+              <div class="word-bank-top"><div><span class="mini-label">🌈 YOUR WRITING TOOLKIT</span><h3 id="wordBankTitle">Chef's Word Bank</h3></div><span class="word-bank-sparkle">💡</span></div>
+              <p>Pick the words that suit your idea. You can use your own words, too!</p>
+              <div class="word-bank-group"><h4>🍓 Food ideas</h4><p>Tap a food to put it in the ingredient box. You decide whether to add it.</p><div class="bank-tiles"><button type="button" data-bank-kind="ingredient">apple</button><button type="button" data-bank-kind="ingredient">banana</button><button type="button" data-bank-kind="ingredient">carrot</button><button type="button" data-bank-kind="ingredient">spinach</button><button type="button" data-bank-kind="ingredient">cucumber</button><button type="button" data-bank-kind="ingredient">oats</button><button type="button" data-bank-kind="ingredient">yoghurt</button><button type="button" data-bank-kind="ingredient">egg</button></div></div>
+              <div class="word-bank-group"><h4>🔪 Action words</h4><p>Choose a step box first, then tap a word to add it.</p><div class="bank-tiles"><button type="button" data-bank-kind="step">wash</button><button type="button" data-bank-kind="step">peel</button><button type="button" data-bank-kind="step">cut</button><button type="button" data-bank-kind="step">slice</button><button type="button" data-bank-kind="step">chop</button><button type="button" data-bank-kind="step">mix</button><button type="button" data-bank-kind="step">add</button><button type="button" data-bank-kind="step">pour</button><button type="button" data-bank-kind="step">stir</button><button type="button" data-bank-kind="step">serve</button></div></div>
+              <div class="word-bank-group"><h4>✨ Useful words</h4><div class="bank-tiles"><button type="button" data-bank-kind="step">carefully</button><button type="button" data-bank-kind="step">gently</button><button type="button" data-bank-kind="step">with</button><button type="button" data-bank-kind="step">into pieces</button><button type="button" data-bank-kind="step">in a bowl</button><button type="button" data-bank-kind="step">on a plate</button></div></div>
+              <div class="sequence-guide"><strong>🧭 Order words:</strong><span>First</span><span>Next</span><span>Then</span><span>Finally</span></div>
+              <p id="wordBankHint" class="word-bank-hint" role="status">💬 You are in charge! Choose words, think about their order, and make your own sentences.</p>
+            </div>
+            <div class="form-field"><label for="recipeTitle">Your own recipe title</label><input type="text" id="recipeTitle" maxlength="60" placeholder="Give your creation a name"></div>
+            <div class="form-field"><label for="ingredientInput">Your ingredients (at least 3)</label><div class="input-line"><input id="ingredientInput" type="text" maxlength="32" placeholder="Choose or type a food"><button id="ingredientAdd" type="button">+ Add</button></div><div id="ingredientList" class="food-tags ingredients-tags"></div></div>
+            <div class="form-field"><label>Write four recipe steps</label><p class="field-hint">Think: What happens at the beginning, in the middle, and at the end? Use the word bank if you need ideas.</p><div class="step-fields">
+              <label><strong>1. First,</strong><input type="text" id="step0" maxlength="140" placeholder="Write your first action..."></label>
+              <label><strong>2. Next,</strong><input type="text" id="step1" maxlength="140" placeholder="What happens next?"></label>
+              <label><strong>3. Then,</strong><input type="text" id="step2" maxlength="140" placeholder="What do you do after that?"></label>
+              <label><strong>4. Finally,</strong><input type="text" id="step3" maxlength="140" placeholder="How does your recipe end?"></label>
+            </div></div>
+            <div class="action-row"><button id="saveRecipe" class="btn light" type="button">💾 Save draft</button><button id="checkRecipe" class="btn primary" type="button">✅ Check my recipe</button></div><p id="recipeFeedback" class="feedback left-feedback" role="status"></p>
+          </div>
+          <div class="recipe-sidebar"><div class="recipe-preview" id="recipePreview"><span class="recipe-preview-top">✦ MY RECIPE CARD ✦</span><h3 id="previewTitle">Your recipe title</h3><div class="preview-bowl">🥗</div><strong>Ingredients</strong><ul id="previewIngredients"><li>Add at least 3 ingredients...</li></ul><strong>Steps</strong><ol id="previewSteps"><li>First, ...</li><li>Next, ...</li><li>Then, ...</li><li>Finally, ...</li></ol><span id="recipeStamp" class="recipe-stamp">DRAFT</span></div>
+            <div class="checklist"><h3>✅ Recipe Checklist</h3><ul id="recipeChecklist"><li>☐ Recipe title</li><li>☐ At least 3 ingredients</li><li>☐ Four complete instructions</li><li>☐ Sequence words in order</li></ul><div class="think-like-chef"><strong>🤔 Think like a chef</strong><ul><li>Are my ingredients suitable for my idea?</li><li>Can a friend follow my instructions?</li><li>Have I used capital letters and full stops?</li></ul><p>Your recipe should be <em>your own</em> creation!</p></div></div>
+          </div></div>
+        </div>
+      </section>
+
+      <section class="page hidden" id="page-games" aria-labelledby="gamesTitle">
+        <div class="section-hero coral"><div><span class="eyebrow">🎮 CHALLENGE ZONE</span><h1 id="gamesTitle">Food Hero <em>Arena!</em></h1><p>Ready for a tougher challenge? Test food vocabulary, food groups, sequence words, and English sentence skills.</p></div><div class="section-hero-art">🏆<span>⚡</span></div></div>
+        <div id="gameIntro" class="arena-intro"><div class="arena-glow">🎯</div><h2>10 Questions. 3 Hearts. 1 Food Hero.</h2><p>Answer quickly to earn speed points and keep your streak alive. Wrong answers cost one heart. Can you earn the golden chef badge?</p><div class="rule-row"><span>❤️ 3 lives</span><span>⏱️ 20 seconds</span><span>🔥 Streak bonuses</span><span>🧠 Year 5 English</span></div><button id="gameStart" type="button" class="btn primary large">🚀 Start challenge</button><p id="personalBest" class="personal-best">Your best score will appear here.</p></div>
+        <div id="gamePlay" class="arena-play hidden"><div class="arena-stats"><div><span class="small-overline">QUESTION</span><strong id="gameNumber">1 / 10</strong></div><div><span class="small-overline">HEARTS</span><strong id="gameHearts">❤️❤️❤️</strong></div><div><span class="small-overline">POINTS</span><strong id="gamePoints">0</strong></div><div><span class="small-overline">TIME LEFT</span><strong id="gameTimer">20s</strong></div></div><div class="progress-track game-track"><span id="gameBar"></span></div><div class="game-question"><span class="mini-label" id="gameCategory">FOOD VOCABULARY</span><div id="gameVisual" class="game-visual">🥗</div><h2 id="gamePrompt">Choose your answer</h2><div id="gameChoices" class="choice-grid game-choices"></div><p id="gameFeedback" class="feedback" role="status"></p><div class="centered"><button id="gameNext" type="button" class="btn primary hidden">Next question →</button></div></div></div>
+        <div id="gameResult" class="arena-result hidden"><div class="result-emoji">🏆</div><h2 id="gameResultTitle">Food Hero!</h2><p>Challenge finished!</p><div id="gameResultPoints" class="score-big">0</div><p id="gameResultDetails">Correct answers</p><div class="action-row centered-actions"><button id="gameRetry" type="button" class="btn primary">🔄 Play again</button><button id="gameToProgress" type="button" class="btn light">⭐ My progress</button></div></div>
+      </section>
+
+      <section class="page hidden" id="page-progress" aria-labelledby="progressTitle">
+        <div class="section-hero blue"><div><span class="eyebrow">⭐ MY LEARNING JOURNEY</span><h1 id="progressTitle">Look how far <em>you've come!</em></h1><p>Every new food, completed activity, and improved recipe shows your growth.</p></div><div class="section-hero-art">🌟<span>📚</span></div></div>
+        <div id="progressGreeting" class="welcome-line">Hi, Food Hero!</div><div class="progress-grid"><article class="progress-tile"><span>🍇</span><strong id="progressFoods">0</strong><h3>Foods collected</h3><p>Healthy and unhealthy examples</p></article><article class="progress-tile"><span>🥗</span><strong id="progressPlate">—</strong><h3>Healthy Plate</h3><p>Best result out of 10</p></article><article class="progress-tile"><span>📝</span><strong id="progressRecipe">Not started</strong><h3>Recipe Studio</h3><p>Your latest saved recipe</p></article><article class="progress-tile"><span>🏆</span><strong id="progressGame">—</strong><h3>Food Hero Arena</h3><p>Highest points earned</p></article></div>
+        <div class="journey-card"><div><span class="mini-label">KEEP GROWING</span><h2>Your next learning adventure awaits!</h2><p>Practise your food vocabulary, improve your recipe, or try for a higher game score.</p></div><div class="action-row"><button type="button" class="btn light" data-jump="activities">Go to activities →</button><button type="button" class="btn primary" data-jump="games">Play games →</button></div></div>
+      </section>
+
+      <section class="page hidden" id="page-creator" aria-labelledby="creatorTitle">
+        <div class="section-hero sunshine"><div><span class="eyebrow">🌟 MEET THE CREATOR</span><h1 id="creatorTitle">The person behind <em>Food Quest!</em></h1><p>Made with creativity, care, and a love for meaningful English learning.</p></div><div class="section-hero-art">🎨<span>💡</span></div></div>
+        <div class="creator-profile">
+          <div class="creator-photo-wrap"><img src="assets/rosario-ivan.png" alt="Colourful cartoon portrait of Rosario Ivan, smiling, showing a peace sign and thumbs-up" class="creator-photo"><span class="creator-sticker">WEBSITE CREATOR ✨</span></div>
+          <div class="creator-bio"><span class="mini-label">CREATED &amp; DESIGNED BY</span><h2>Rosario Ivan<br><span>anak Ambrose</span></h2><div class="creator-facts"><div><span>👤 Name</span><strong>Rosario Ivan anak Ambrose</strong></div><div><span>🎓 Class</span><strong>BI2824</strong></div><div><span>💻 Role</span><strong>Website Creator &amp; Learning Designer</strong></div><div><span>📚 Learning Project</span><strong>Year 5 English · Unit 5: Food &amp; Health</strong></div></div><p>Food Quest was created to help Year 5 pupils explore food vocabulary, practise English, write healthy recipes, and enjoy interactive learning.</p><button type="button" class="btn primary" data-jump="home">🍎 Explore Food Quest →</button></div>
+        </div>
+        <div class="creator-note"><span>💚</span><p><strong>A message to young learners:</strong> Keep asking questions, keep trying, and remember that every small step helps you become a better learner!</p></div>
+        <div class="creator-sources"><strong>Learning content references:</strong> <a href="https://www.moh.gov.my/images/anms/penerbitan/buku-sokongan/Buku_Sokongan_ANMS_1_21122021.pdf" target="_blank" rel="noopener noreferrer">Ministry of Health Malaysia — Healthy Plate</a> · <a href="https://www.who.int/news-room/fact-sheets/detail/healthy-diet" target="_blank" rel="noopener noreferrer">World Health Organization — Healthy Diet</a><p>Creator portrait supplied by Rosario Ivan. Mr. Wan Thuthri artwork is an original illustration created for this learning website.</p></div>
+      </section>
+
+      <section class="page hidden" id="page-teacher" aria-labelledby="teacherTitle">
+        <div class="section-hero blue teacher-hero"><div><span class="eyebrow">🔒 TEACHER AREA</span><h1 id="teacherTitle">Class Learning <em>Records</em></h1><p>Review individual learner progress in the local prototype.</p></div><div class="section-hero-art">📊<span>🔐</span></div></div>
+        <div id="teacherGate" class="teacher-gate"><div class="gate-icon">🔐</div><h2>Teacher access</h2><p>Enter the teacher password to open this preview dashboard.</p><form id="teacherLogin"><label for="teacherPassword">Teacher password</label><div class="password-line"><input id="teacherPassword" type="password" autocomplete="off" placeholder="Enter password" required><button type="submit" class="btn primary">Unlock →</button></div><p id="passwordError" class="validation" role="alert"></p></form><p class="gate-notice">Demo gate only: this static website cannot securely protect real pupil records. Use sample nicknames.</p></div>
+        <div id="teacherContent" class="hidden"><div class="teacher-alert">⚠️ Prototype records are stored in this browser only. This password screen is not real authentication and can be bypassed by someone with technical knowledge. Do not use real pupil data.</div><div class="teacher-metrics"><div><strong id="tStudents">0</strong><span>Pupil profiles</span></div><div><strong id="tFoods">0</strong><span>Foods collected</span></div><div><strong id="tRecipes">0</strong><span>Recipes completed</span></div><div><strong id="tGames">0</strong><span>Game attempts</span></div></div><div class="section-heading"><div><h2>Year 5 Harmony · Pupil overview</h2><p>Select a pupil to see their saved work.</p></div></div><div class="table-wrap"><table><thead><tr><th>Pupil</th><th>Foods</th><th>Plate Best</th><th>Recipe</th><th>Game Best</th><th>Details</th></tr></thead><tbody id="teacherRows"></tbody></table></div><p id="noPupils" class="empty-note hidden">No profiles have been created in this browser.</p><div id="pupilDetail" class="pupil-detail hidden"></div><div class="action-row teacher-actions"><button id="exportTeacher" class="btn primary" type="button">⬇ Export CSV</button><button id="lockTeacher" class="btn light" type="button">🔒 Lock teacher view</button></div></div>
+      </section>
+    </main>
+    <footer class="footer"><span>🍓 FOOD QUEST! · Year 5 English · Creating My Healthy Recipe</span><button id="footerCreator" type="button" class="footer-creator">Created by Rosario Ivan anak Ambrose · BI2824 <span>♥</span></button></footer>
+  </div>
+
+  <div id="welcomeOverlay" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
+    <div class="welcome-card"><div class="welcome-art"><span class="welcome-deco w1">🍎</span><span class="welcome-deco w2">🥕</span><span class="welcome-deco w3">🍕</span><span class="welcome-deco w4">🥦</span><div class="chef-emoji">👩‍🍳</div><div class="welcome-art-tag">YEAR 5 FOOD QUEST</div></div>
+      <div class="welcome-body"><span class="mini-label">WELCOME, YOUNG CHEF!</span><h2 id="welcomeTitle">Ready for your <em>food adventure?</em></h2><p>Make your own Food Quest profile before entering the learning website.</p>
+        <div class="signup-tabs" role="group" aria-label="Choose sign up or return"><button type="button" id="signupTab" class="selected" aria-pressed="true">✨ New pupil</button><button type="button" id="continueTab" aria-pressed="false">👋 Welcome back</button></div>
+        <form id="signupForm"><label for="nickname">Your fun nickname</label><input id="nickname" type="text" autocomplete="off" maxlength="24" required placeholder="e.g. StarChef"><label for="classInput">Your class</label><select id="classInput"><option>Year 5 Harmony</option></select><label>Choose your food buddy</label><div class="avatar-options"><button type="button" class="avatar-option selected" data-avatar="🍎" aria-label="Apple food buddy" aria-pressed="true">🍎</button><button type="button" class="avatar-option" data-avatar="🥑" aria-label="Avocado food buddy" aria-pressed="false">🥑</button><button type="button" class="avatar-option" data-avatar="🥕" aria-label="Carrot food buddy" aria-pressed="false">🥕</button><button type="button" class="avatar-option" data-avatar="🍓" aria-label="Strawberry food buddy" aria-pressed="false">🍓</button></div><p id="signupError" class="validation" role="alert"></p><button type="submit" class="btn primary wide">🚀 Let's go!</button></form>
+        <div id="savedProfiles" class="hidden"><div id="savedProfileList" class="saved-profile-list"></div><p class="small-muted">Choose a local demo profile to continue.</p></div><button id="teacherFromWelcome" class="teacher-entry" type="button">🔒 I am the teacher</button><p class="privacy-message">Please use a nickname, not a real pupil's name. This demo saves progress on this device only.</p>
+      </div>
+    </div>
+  </div>
+
+  <button id="chatFab" class="chat-fab" type="button" aria-haspopup="dialog" aria-controls="chatPanel" aria-expanded="false" aria-label="Open Mr. Wan Thuthri food helper">
+    <img src="assets/mr-wan-thuthri.svg" alt="" aria-hidden="true"><span><strong>Ask Mr. Wan Thuthri</strong><small>Food &amp; English helper</small></span><span class="chat-sparkle">✦</span>
+  </button>
+  <section id="chatPanel" class="chat-panel hidden" role="dialog" aria-modal="false" aria-labelledby="chatTitle">
+    <header class="chat-header"><img src="assets/mr-wan-thuthri.svg" alt="Cartoon portrait of Mr. Wan Thuthri"><div><h2 id="chatTitle">Mr. Wan Thuthri</h2><p>💚 Food &amp; Recipe Helper · Offline</p></div><button id="chatClose" type="button" aria-label="Close chat">×</button></header>
+    <div id="chatMessages" class="chat-messages" role="log" aria-live="polite" aria-relevant="additions text"></div>
+    <div class="chat-suggestions"><span>TRY ASKING...</span><div id="chatSuggestions" class="chat-prompt-list">
+      <button type="button" data-chat-prompt="What is healthy food?">🥦 What is healthy food?</button>
+      <button type="button" data-chat-prompt="Is rice a grain?">🍚 Is rice a grain?</button>
+      <button type="button" data-chat-prompt="Is tomato a fruit?">🍅 Is tomato a fruit?</button>
+      <button type="button" data-chat-prompt="How do I write a healthy recipe?">📝 How do I write a recipe?</button>
+    </div></div>
+    <form id="chatForm" class="chat-compose"><label for="chatInput" class="visually-hidden">Ask Mr. Wan Thuthri a question</label><input id="chatInput" type="text" maxlength="200" autocomplete="off" placeholder="Ask me about food or recipes..." required><button type="submit" aria-label="Send question">➤</button></form>
+    <div class="chat-footnote"><span>Guided classroom answers, not a live generative AI.</span><button id="chatReset" type="button">Clear chat</button></div>
+  </section>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+</body>
+</html>

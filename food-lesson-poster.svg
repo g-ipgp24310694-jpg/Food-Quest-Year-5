@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<defs><linearGradient id="sky" x2="1" y2="1"><stop stop-color="#ffe79b"/><stop offset="1" stop-color="#fff6d9"/></linearGradient></defs>
+<rect width="1280" height="720" fill="url(#sky)"/>
+<circle cx="1142" cy="58" r="245" fill="#ffcc62" opacity=".6"/><circle cx="72" cy="650" r="240" fill="#fff" opacity=".5"/>
+<rect x="72" y="58" width="265" height="55" rx="27" fill="#fff"/><text x="99" y="95" font-family="DejaVu Sans" font-size="23" font-weight="bold" fill="#235888">YEAR 5 ENGLISH</text>
+<text x="80" y="235" font-family="DejaVu Sans" font-size="87" font-weight="bold" fill="#1f3e73">FOOD &amp; HEALTH</text><text x="83" y="315" font-family="DejaVu Sans" font-size="37" font-weight="bold" fill="#49728f">Become a smart food explorer!</text>
+<g transform="translate(145 383)"><ellipse cx="110" cy="210" rx="160" ry="26" fill="#e5ba61" opacity=".5"/><path d="M40 61C-4 13 21-21 66 13c28-40 85-38 112 3 58-33 91 5 60 61-13 53-47 117-99 116-32 0-42-11-58-1C38 190 12 116 40 61Z" fill="#f25164" stroke="#ae3457" stroke-width="10"/><path d="M123 18c4-53 23-66 51-75" stroke="#52794a" stroke-width="12" fill="none" stroke-linecap="round"/><path d="M133-30c-20-35-55-35-77-25 16 38 42 44 77 25Z" fill="#49b883"/></g>
+<g transform="translate(730 367)"><ellipse cx="172" cy="226" rx="217" ry="26" fill="#e5ba61" opacity=".4"/><path d="M30 84h310c-7 130-58 176-155 176C86 260 38 213 30 84Z" fill="#79c6dd" stroke="#205a87" stroke-width="11"/><ellipse cx="185" cy="83" rx="160" ry="53" fill="#f8ffff" stroke="#205a87" stroke-width="10"/><path d="M56 82c54-58 103-45 127-13 51-46 104-42 131 14-71 54-191 52-258-1Z" fill="#6fc987"/><circle cx="113" cy="71" r="31" fill="#f25760"/><circle cx="228" cy="71" r="30" fill="#f8b65f"/><path d="M158 68c30-23 51-18 63 0" fill="none" stroke="#3b9b62" stroke-width="20" stroke-linecap="round"/></g>
+<rect x="82" y="637" width="583" height="48" rx="24" fill="#2b5891"/><text x="122" y="669" font-family="DejaVu Sans" font-size="24" font-weight="bold" fill="#fff">WATCH  •  THINK  •  CHOOSE</text>
+</svg>
